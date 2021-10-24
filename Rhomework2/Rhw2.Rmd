@@ -31,7 +31,6 @@ dat_long
 
 
 
-
 WEIGHT_LOSS <- matrix(dat[,3]-dat[,2], dimnames = list(c("subject_1","subject_2","subject_3","subject_4","subject_5"),
                                                        c("lost_weight")))
 WEIGHT_LOSS
