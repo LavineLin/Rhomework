@@ -1,0 +1,39 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Homework2
+
+```{r cars}
+#Create the following data frame from scratch.
+
+
+name   <- c("subject1", "subject2","subject3","subject4","subject5")
+before_diet <- c(104,95,87,77,112)
+after_diet <- c(96,91,81,75,118)
+dat    <- data.frame(name, before_diet, after_diet)
+dat
+
+
+#Reformat this data frame to obtain the weight as a double numeric into one column and the time of measurement as factor with two levels before_diet and after_diet.
+
+
+library(tidyr)
+dat_long <- pivot_longer(dat,cols= before_diet:after_diet,names_to = "condition",values_to = "BUBBLE_DIET")
+dat_long
+
+
+
+#The second element of this list will be another list called WEIGHT_LOSS with three elements: [1] a vector of character extracting the row names of the table previously created; [2] a numeric vector (double) indicating the weight loss (in %) of each subject (can be positive or negative); [3] combine these two elements in a table with two columns: subject and weight_loss. 
+
+
+
+
+WEIGHT_LOSS <- matrix(dat[,3]-dat[,2], dimnames = list(c("subject_1","subject_2","subject_3","subject_4","subject_5"),
+                                                       c("lost_weight")))
+WEIGHT_LOSS
+percentage <- WEIGHT_LOSS/dat[,3]*100
+percentage
