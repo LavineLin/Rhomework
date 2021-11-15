@@ -1,0 +1,69 @@
+---
+title: "The effect of blue light intensity and feeding concentration on the physiological performance of Pocillopora acuta and Stylophora pistillata"
+author: r10241208 林彥志 Yen-Chih,Lin
+
+output:
+html_document:
+theme: cerulean
+---
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 12px;
+  }
+td {  /* Table  */
+  font-size: 8px;
+}
+h1.title {
+  font-size: 38px;
+  color: DarkRed;
+}
+h1 { /* Header 1 */
+  font-size: 28px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
+
+
+# Introduction
+
+Coral can be devided into scleractinians and alcyonaceans by their type and the numbers of polyps.They mainly grow in tropical and low-nutrient seas. They form hard bones by recipitating calcium carbonate, and forms coral reefs through bone growth and accumulation. The coral reef may not be the largest terrain in the ocean ,but it has the highest productivity and highest biodiversity of ocean.
+  Coral aquaculture become more and more important because of the decline of the coral reef all around the world. There are many advantages of coral aquaculture, such as we can restoration the coral reef by transplant the artificial coral and the marine drug’s researches become more and more important, they find out that there are some of the substrate secret by coral can be used at human, but the sustainability and replication still the question of the development, so the coral aquaculture maybe can solve this problem. 
+   Light is a key point for coral to growth, the light not only can push the symbiodinium algae to photosynthesis and to provide energy to coral but also can enhance the calcification of coral.
+Cultivating coral under blue light is known to enhance coral calcification and increase pigmentation, but also inhibits the photosynthetic efficiency of Symbiodinium. To address this tradeoff, heterotrophic feeding has been proposed as a way to provide sufficient nutrients to corals grown under blue light.
+
+# Research approach
+
+## Field collection of soft corals
+
+The coral was collected at Maanshan Nuclear Power Plant and acclimation for two weeks in the tank. After acclimation, use the coral cutting machine to cut the coral into fragment (3-5 cm) and fixed it on the pedestal then acclimation for two weeks.
+
+## Aquaria experiment
+
+This experiment was carried out in two recirculating aquaculture systems, which were used as a feeding system and a breeding system. There are six groups of aquaculture tanks in the breeding system. Three of the tank for strong blue light (380 μmol photons m-2 s -1) and the other three for weak blue light (80 μmol photons m-2 s -1) . Then put ten fragments of each kind of coral, five of them treat with high concentration of feeding (80 ind/ml) and the other treat with low concentration feeding (40 ind/ml). This experiment will maintain for 70 days and test their growth rate (floating weight) and their color every two weeks.
+![Caption for the picture.](C:/Users/Dear User/Desktop/PIC2.jpg)
+
+# Sampling and sample analyses
+## Sampling time
+
+The length of the aquaria experiment will ideally be 70 days. Samples will be collected on the field at the beginning of the experiment (D0) and then will be collected at regular intervals of 14 days in the aquaria after the first day of captivity for a total of 6 time points (D0,D14,D28,D42,D56, D70). D0 will be used as the control to follow the impact of captivity on the corals.
+
+## Sample analyses
+1.	Buoyant weight, is a way to weight the coral sample in the sea water, this way can minimize the stress while we are moving the coral.
+2.	Taking the picture for each coral every two weeks, and loading these pictures into photoshop and then use the function to check the RGB number.
