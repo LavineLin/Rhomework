@@ -1,0 +1,47 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R HW3
+
+
+```{r cars}
+library(maptools)
+library(rgdal)
+library (sp)
+library(raster)
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggspatial)
+library(rgbif)
+library(mapr)
+library(marmap)
+library(leaflet)
+
+
+url <- 'https://data.moi.gov.tw/MoiOD/System/DownloadFile.aspx?DATA=72874C55-884D-4CEA-B7D6-F60B0BE85AB0'
+path1 <- tempfile(fileext = ".zip")
+if (file.exists(path1))  'file alredy exists' else download.file(url, path1, mode="wb")
+unzip(zipfile = path1,exdir = 'Data')
+
+taiwan <- readOGR('Data/COUNTY_MOI_1090820.shp', use_iconv=TRUE, encoding='UTF-8')
+
+
+FRE <- paste(sep = "<br/>",
+  "<b><a href='https://www.dipintothereef.com/'>406Lab TAIWAN</a></b>",
+  "Reef Ecology and Microbiology Lab",
+  "Institute of Fishery Science, NTU")
+
+
+leaflet(taiwan) %>%
+  addPolygons(weight=0.5) %>%
+  addTiles(group="Kort") %>%
+  addPopups(121.539418239001, 25.020888875540166, FRE, options = popupOptions(closeButton = FALSE))
+
+```
+
