@@ -1,0 +1,41 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practice M1
+
+
+
+```{r cars}
+library(gclus)
+library(vegan)
+library(mvabund)
+library(ade4)
+
+#Select observation for the year 1981, 1983, and 1985 only
+data(tikus) 
+tikus.spe <- tikus$abund
+tikus.env <- tikus$x
+tikus.spe.select <- tikus.spe[tikus.env$time %in% c(81, 83, 85), ]
+
+#Build a Bray-Curtis dissimilarity matrix among selected observations
+BC <- vegdist(tikus.spe.select) 
+BC
+# Plot heat map of the respective matrix
+source("https://www.dipintothereef.com/uploads/3/7/3/5/37359245/coldiss.r")
+coldiss(BC,byrank=F,diag=T)
+# Build a network of species co-occurence (presence/absence) based on your selection
+tikus.spe.cooccurence <-ifelse(tikus.spe>0,1,0)
+library(cooccur)
+cooccur.tikus <- cooccur(mat=tikus.spe.cooccurence,
+                         type="spp_site",
+                         thresh=TRUE,
+                         spp_names=TRUE)
+
+plot(cooccur.tikus)
+
+```
+
