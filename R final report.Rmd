@@ -1,0 +1,236 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Final Report
+
+
+```{r cars}
+setwd("C:/Users/Dear User/Desktop/Rfinalreport")
+library(ggplot2)
+#read data
+HFHLPA<-read.csv("FVFM_HFHLPA.csv")
+HFHLSP<-read.csv("FVFM_HFHLSP.csv")
+HFLLPA<-read.csv("FVFM_HFLLPA.csv")
+HFLLSP<-read.csv("FVFM_HFLLSP.csv")
+LFHLPA<-read.csv("FVFM_LFHLPA.csv")
+LFHLSP<-read.csv("FVFM_LFHLSP.csv")
+LFLLPA<-read.csv("FVFM_LFLLPA.csv")
+LFLLSP<-read.csv("FVFM_LFLLSP.csv")
+
+
+#boxplot data
+boxplot(HFHLPA$fv.fm~HFHLPA$day)
+boxplot(HFHLSP$fv.fm~HFHLSP$day)
+boxplot(HFLLPA$fv.fm~HFLLPA$day)        
+boxplot(HFLLSP$fv.fm~HFLLSP$day)
+boxplot(LFHLPA$fv.fm~LFHLPA$day)
+boxplot(LFHLSP$fv.fm~LFHLSP$day)
+boxplot(LFLLPA$fv.fm~LFLLPA$day)
+boxplot(LFLLSP$fv.fm~LFLLSP$day)
+
+#mean of fvfm-HFHLPA
+HFHLPAD0<-mean(HFHLPA[1:15,4])
+HFHLPAD22<-mean(HFHLPA[16:30,4])
+HFHLPAD42<-mean(HFHLPA[31:45,4])
+HFHLPAD59<-mean(HFHLPA[46:60,4])
+HFHLPAD74<-mean(HFHLPA[61:75,4])
+HFHLPAmean<-data.frame(
+  fvfm=c(HFHLPAD0,HFHLPAD22,HFHLPAD42,HFHLPAD42,HFHLPAD59,HFHLPAD74),
+  day=c(0,22,42,42,59,74))
+ggplot(HFHLPAmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("HFHLPAmean of fvfm ")
+
+#mean of fvfm-HFHLSP
+HFHLSPD0<-mean(HFHLSP[1:15,4])
+HFHLSPD22<-mean(HFHLSP[16:30,4])
+HFHLSPD42<-mean(HFHLSP[31:45,4])
+HFHLSPD59<-mean(HFHLSP[46:60,4])
+HFHLSPD74<-mean(HFHLSP[61:75,4])
+HFHLSPmean<-data.frame(
+  fvfm=c(HFHLSPD0,HFHLSPD22,HFHLSPD42,HFHLSPD42,HFHLSPD59,HFHLSPD74),
+  day=c(0,22,42,42,59,74))
+ggplot(HFHLSPmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("HFHLSPmean of fvfm ")
+
+#mean of fvfm-LFHLPA
+LFHLPAD0<-mean(LFHLPA[1:15,4])
+LFHLPAD22<-mean(LFHLPA[16:30,4])
+LFHLPAD42<-mean(LFHLPA[31:45,4])
+LFHLPAD59<-mean(LFHLPA[46:60,4])
+LFHLPAD74<-mean(LFHLPA[61:75,4])
+LFHLPAmean<-data.frame(
+  fvfm=c(LFHLPAD0,LFHLPAD22,LFHLPAD42,LFHLPAD42,LFHLPAD59,LFHLPAD74),
+  day=c(0,22,42,42,59,74))
+ggplot(LFHLPAmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("LFHLPAmean of fvfm ")
+
+#mean of fvfm-LFHLSP
+LFHLSPD0<-mean(LFHLSP[1:15,4])
+LFHLSPD22<-mean(LFHLSP[16:30,4])
+LFHLSPD42<-mean(LFHLSP[31:45,4])
+LFHLSPD59<-mean(LFHLSP[46:60,4])
+LFHLSPD74<-mean(LFHLSP[61:75,4])
+LFHLSPmean<-data.frame(
+  fvfm=c(LFHLSPD0,LFHLSPD22,LFHLSPD42,LFHLSPD42,LFHLSPD59,LFHLSPD74),
+  day=c(0,22,42,42,59,74))
+ggplot(LFHLSPmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("LFHLSPmean of fvfm ")
+
+
+#mean of fvfm-HFLLPA
+HFLLPAD0<-mean(HFLLPA[1:15,4])
+HFLLPAD22<-mean(HFLLPA[16:30,4])
+HFLLPAD42<-mean(HFLLPA[31:45,4])
+HFLLPAD59<-mean(HFLLPA[46:60,4])
+HFLLPAD74<-mean(HFLLPA[61:75,4])
+HFLLPAmean<-data.frame(
+  fvfm=c(HFLLPAD0,HFLLPAD22,HFLLPAD42,HFLLPAD42,HFLLPAD59,HFLLPAD74),
+  day=c(0,22,42,42,59,74))
+ggplot(HFLLPAmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("HFLLPAmean of fvfm ")
+#mean of fvfm-HFLLSP
+HFLLSPD0<-mean(HFLLSP[1:15,4])
+HFLLSPD22<-mean(HFLLSP[16:30,4])
+HFLLSPD42<-mean(HFLLSP[31:45,4])
+HFLLSPD59<-mean(HFLLSP[46:60,4])
+HFLLSPD74<-mean(HFLLSP[61:75,4])
+HFLLSPmean<-data.frame(
+  fvfm=c(HFLLSPD0,HFLLSPD22,HFLLSPD42,HFLLSPD42,HFLLSPD59,HFLLSPD74),
+  day=c(0,22,42,42,59,74))
+ggplot(HFLLSPmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("HFLLSPmean of fvfm ")
+
+#mean of fvfm-LFLLPA
+LFLLPAD0<-mean(LFLLPA[1:15,4])
+LFLLPAD22<-mean(LFLLPA[16:30,4])
+LFLLPAD42<-mean(LFLLPA[31:45,4])
+LFLLPAD59<-mean(LFLLPA[46:60,4])
+LFLLPAD74<-mean(LFLLPA[61:75,4])
+LFLLPAmean<-data.frame(
+  fvfm=c(LFLLPAD0,LFLLPAD22,LFLLPAD42,LFLLPAD42,LFLLPAD59,LFLLPAD74),
+  day=c(0,22,42,42,59,74))
+ggplot(LFLLPAmean, aes(x = day, y = fvfm))+ylim(0,1) + geom_line() + geom_point()+ggtitle("LFLLPAmean of fvfm ")
+#mean of fvfm-LFLLSP
+LFLLSPD0<-mean(LFLLSP[1:15,4])
+LFLLSPD22<-mean(LFLLSP[16:30,4])
+LFLLSPD42<-mean(LFLLSP[31:45,4])
+LFLLSPD59<-mean(LFLLSP[46:60,4])
+LFLLSPD74<-mean(LFLLSP[61:75,4])
+LFLLSPmean<-data.frame(
+  fvfm=c(LFLLSPD0,LFLLSPD22,LFLLSPD42,LFLLSPD42,LFLLSPD59,LFLLSPD74),
+  day=c(0,22,42,42,59,74))
+ggplot(LFLLSPmean, aes(x = day, y = fvfm)) +ylim(0,1)+ geom_line() + geom_point()+ggtitle("LFLLSPmean of fvfm ")
+
+
+#normal distrubution
+shapiro.test(HFHLPA[,4])
+shapiro.test(HFHLSP[,4]) 
+shapiro.test(LFHLPA[,4])
+shapiro.test(LFHLSP[,4])
+shapiro.test(HFLLPA[,4])
+shapiro.test(HFLLSP[,4])
+shapiro.test(LFLLPA[,4])
+shapiro.test(LFLLSP[,4])
+ #some of the data is not normal distrubution,so use kruskal.test 
+
+kruskal.test(day ~ fv.fm , data = HFHLPA)
+kruskal.test(day ~ fv.fm , data = HFHLSP)
+kruskal.test(day ~ fv.fm , data = LFHLPA)
+kruskal.test(day ~ fv.fm , data = LFHLSP)
+kruskal.test(day ~ fv.fm , data = HFLLPA)
+kruskal.test(day ~ fv.fm , data = HFLLSP)
+kruskal.test(day ~ fv.fm , data = LFLLPA)
+kruskal.test(day ~ fv.fm , data = LFLLSP)
+#All data's day and fv.fm p value > 0.05 ,so no significant difference
+
+#bind datas which are same treatment at same species 
+library(tidyr)
+HFPA<-rbind(HFHLPA,HFLLPA)
+LFPA<-rbind(LFHLPA,LFLLPA)
+HLPA<-rbind(HFHLPA,LFHLPA)
+LLPA<-rbind(HFLLPA,LFLLPA)
+HFSP<-rbind(HFHLSP,HFLLSP)
+LFSP<-rbind(LFHLSP,LFLLSP)
+HLSP<-rbind(HFHLSP,LFHLSP)
+LLSP<-rbind(HFLLSP,LFLLSP)
+
+#Check Normal distrubution of different treatment of same species
+shapiro.test(HFPA[,4])
+shapiro.test(LFPA[,4])
+shapiro.test(HLPA[,4])
+shapiro.test(LLPA[,4])
+shapiro.test(HFSP[,4])
+shapiro.test(LFSP[,4])
+shapiro.test(HLSP[,4])
+shapiro.test(LLSP[,4])
+#ALL p value <0.05 so it is not normal distrubution
+
+kruskal.test(day ~ fv.fm , data = HFPA)
+kruskal.test(day ~ fv.fm , data = LFPA)
+kruskal.test(day ~ fv.fm , data = HLPA)
+kruskal.test(day ~ fv.fm , data = LLPA)
+kruskal.test(day ~ fv.fm , data = HFSP)
+kruskal.test(day ~ fv.fm , data = LFSP)
+kruskal.test(day ~ fv.fm , data = HLSP)
+kruskal.test(day ~ fv.fm , data = LLSP)
+#All data's day and fv.fm p value > 0.05 ,so no significant difference
+
+#bind datas which are same treatment but different species
+HFHL<-rbind(HFHLPA,HFHLSP)
+LFHL<-rbind(LFHLPA,LFHLSP)
+HFLL<-rbind(HFLLPA,HFLLSP)
+LFLL<-rbind(LFLLPA,LFLLSP)
+#Check Normal distrubution of same treatment of different species
+
+shapiro.test(HFHL[,4])
+shapiro.test(LFHL[,4])
+shapiro.test(HFLL[,4])
+shapiro.test(LFLL[,4])
+# Most p value <0.05 so it is not normal distrubution
+kruskal.test(day ~ fv.fm , data = HFHL)
+kruskal.test(day ~ fv.fm , data = LFHL)
+kruskal.test(day ~ fv.fm , data = HFLL)
+kruskal.test(day ~ fv.fm , data = LFLL)
+#All data's day and fv.fm p value > 0.05 ,so no significant difference
+
+
+#scatter plot
+#use glm to see the correlation
+g1=glm(formula = day~fv.fm, data=HFHLPA)
+summary(g1)
+ggplot(HFHLPA,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("HFHLPA")
+
+g2=glm(formula = day~fv.fm, data=HFHLSP)
+summary(g2)
+ggplot(HFHLSP,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("HFHLSP")
+
+g3=glm(formula = day~fv.fm, data=LFHLPA)
+summary(g3)
+ggplot(LFHLPA,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("LFHLPA")
+
+g4=glm(formula = day~fv.fm, data=LFHLSP)
+summary(g4)
+ggplot(LFHLSP,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("LFHLSP")
+
+g5=glm(formula = day~fv.fm, data=HFLLPA)
+summary(g5)
+ggplot(HFLLPA,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("HFLLPA")
+
+g6=glm(formula = day~fv.fm, data=HFLLSP)
+summary(g6)
+ggplot(HFLLSP,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("HFLLSP")
+
+g7=glm(formula = day~fv.fm, data=LFLLPA)
+summary(g7)
+ggplot(LFLLPA,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("LFLLPA")
+
+g8=glm(formula = day~fv.fm, data=LFLLSP)
+summary(g8)
+ggplot(LFLLSP,aes(x=day,y=fv.fm))+geom_point()+stat_smooth(method = "glm",level=0.99)+ggtitle("LFLSP")
+
+
+
+```
+
+## Conclusion
+Corals in artificial environment with different treatment may not change corals physiological parameters.)
+
+
